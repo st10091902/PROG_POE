@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Submit a Claim";
+}
+
+<h2 class="text-center my-4">Submit Monthly Claim</h2>
+<div class="card shadow-sm p-4">
+    <form method="post" enctype="multipart/form-data" action="/Home/SubmitClaim">
+        <div class="mb-3">
+            <label for="lecturerId" class="form-label">Lecturer ID</label>
+            <input type="number" class="form-control" id="lecturerId" name="lecturerId" placeholder="Enter Lecturer ID" required>
+        </div>
+        <div class="mb-3">
+            <label for="hoursWorked" class="form-label">Hours Worked</label>
+            <input type="number" class="form-control" id="hoursWorked" name="hoursWorked" placeholder="Enter Hours Worked" required>
+        </div>
+        <div class="mb-3">
+            <label for="hourlyRate" class="form-label">Hourly Rate</label>
+            <input type="number" step="0.01" class="form-control" id="hourlyRate" name="hourlyRate" placeholder="Enter Hourly Rate" required>
+        </div>
+        <div class="mb-3">
+            <label for="totalAmount" class="form-label">Total Amount</label>
+            <input type="text" class="form-control" id="totalAmount" name="totalAmount" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="fileUpload" class="form-label">Choose Supporting Document</label>
+            <input type="file" class="form-control" id="fileUpload" name="fileUpload" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Submit Claim</button>
+    </form>
+</div>
+
+<script>
+    // Auto-calculate total amount based on hours worked and hourly rate
+    document.getElementById("hoursWorked").addEventListener("input", calculateTotal);
+    document.getElementById("hourlyRate").addEventListener("input", calculateTotal);
+
+    function calculateTotal() {
+        const hoursWorked = parseFloat(document.getElementById("hoursWorked").value) || 0;
+        const hourlyRate = parseFloat(document.getElementById("hourlyRate").value) || 0;
+        const totalAmount = hoursWorked * hourlyRate;
+        document.getElementById("totalAmount").value = totalAmount.toFixed(2);
+    }
+</script>

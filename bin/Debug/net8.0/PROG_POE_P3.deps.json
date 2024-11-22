@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PROG_POE_P3/1.0.0": {
+        "runtime": {
+          "PROG_POE_P3.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PROG_POE_P3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

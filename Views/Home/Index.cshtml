@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="mb-4">Welcome to the Contract Monthly Claim System</h2>
+        <p class="lead">Manage your claims with ease. Use the options below to submit or view your claims.</p>
+    </div>
+
+    <!-- Section 1: View Claim Status -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-3">View Claim Status</h5>
+                    <p class="card-text">Enter your Lecturer ID to view the progress and details of your submitted claims.</p>
+                    <form method="get" action="/Home/ClaimStatus">
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" name="lecturerId" placeholder="Enter your Lecturer ID" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-search"></i> View Claim Status
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Section 2: Submit a Claim -->
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-3">Submit a Claim</h5>
+                    <p class="card-text">Easily submit your work claims with all the necessary details.</p>
+                    <a href="/Home/SubmitClaim" class="btn btn-success w-100">
+                        <i class="fas fa-upload"></i> Submit a Claim
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include Bootstrap Icons and FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
